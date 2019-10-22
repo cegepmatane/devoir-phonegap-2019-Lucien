@@ -11,8 +11,8 @@ var ListeJeuVue = (function() {
       var textLi = "";
 
       for (var numeroJeu in listeJeuDonnee) {
-        textLi += '<li><a href="#jeu/' + numeroJeu + '">' +
-        listeJeuDonnee[numeroJeu] + "</a></li>";
+        textLi += '<li><a href="#jeu/' + listeJeuDonnee[numeroJeu].id + '">' +
+        listeJeuDonnee[numeroJeu].nom + "</a></li>";
       }
       listeJeu.innerHTML = textLi;
     }
