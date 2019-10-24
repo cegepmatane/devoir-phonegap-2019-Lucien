@@ -19,6 +19,10 @@
 
       var ajouterJeuVue = new AjouterJeuVue(actionAjouterJeu);
       ajouterJeuVue.afficher();
+    } else if (hash.match(/^#modifier-jeu\/([0-9]+)/)) {
+
+      var modifierJeuVue = new ModifierJeuVue(actionAjouterJeu);
+      modifierJeuVue.afficher();
     } else {
 
       var listeJeuDonnee = jeuDAO.lister();

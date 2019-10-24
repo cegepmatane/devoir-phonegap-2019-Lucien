@@ -12,7 +12,8 @@ var ListeJeuVue = (function() {
 
       for (var numeroJeu in listeJeuDonnee) {
         textLi += '<li><a href="#jeu/' + listeJeuDonnee[numeroJeu].id + '">' +
-        listeJeuDonnee[numeroJeu].nom + "</a></li>";
+          listeJeuDonnee[numeroJeu].nom + "</a>" + '&nbsp;&nbsp;<a href="#modifier-jeu/' + listeJeuDonnee[numeroJeu].id + '">' +
+            "Modifier </a></li>";
       }
       listeJeu.innerHTML = textLi;
     }
