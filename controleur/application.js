@@ -24,8 +24,9 @@
       var naviguation = hash.match(/^#modifier-jeu\/([0-9]+)/);
       var idJeu = naviguation[1];
 
+      var listeJeuDonnee = jeuDAO.lister();
       var modifierJeuVue = new ModifierJeuVue(actionModifierJeu, idJeu);
-      modifierJeuVue.afficher();
+      modifierJeuVue.afficher(listeJeuDonnee[idJeu]);
     } else {
 
       var listeJeuDonnee = jeuDAO.lister();

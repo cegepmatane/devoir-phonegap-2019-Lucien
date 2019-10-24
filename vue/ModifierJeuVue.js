@@ -3,9 +3,13 @@ var ModifierJeuVue = (function() {
 
     return function(actionModifierJeu, idJeu) {
 
-        this.afficher = function() {
+        this.afficher = function(jeu) {
             elementBody = document.getElementsByTagName("body")[0];
             elementBody.innerHTML = pageModifierJeu;
+
+            document.getElementById("jeu-nom").value = jeu.nom;
+            document.getElementById("jeu-developpeur").value = jeu.developpeur;
+            document.getElementById("jeu-description").value = jeu.description;
 
             var formulaireModifier = document.getElementById("formulaire-modifier");
             formulaireModifier.addEventListener("submit", modifier);
