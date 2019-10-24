@@ -21,7 +21,10 @@
       ajouterJeuVue.afficher();
     } else if (hash.match(/^#modifier-jeu\/([0-9]+)/)) {
 
-      var modifierJeuVue = new ModifierJeuVue(actionAjouterJeu);
+      var naviguation = hash.match(/^#modifier-jeu\/([0-9]+)/);
+      var idJeu = naviguation[1];
+
+      var modifierJeuVue = new ModifierJeuVue(actionModifierJeu, idJeu);
       modifierJeuVue.afficher();
     } else {
 
@@ -39,6 +42,11 @@
 
   var actionAjouterJeu = function(jeu) {
     jeuDAO.ajouter(jeu);
+    window.location.hash = "#";
+  };
+
+  var actionModifierJeu = function(jeu) {
+    jeuDAO.modifier(jeu);
     window.location.hash = "#";
   };
 

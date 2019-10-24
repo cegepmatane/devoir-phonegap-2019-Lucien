@@ -14,4 +14,10 @@ var JeuDAO = function () {
         jeu.id = listeJeu.length;
         listeJeu.push(jeu);
     }
+
+    this.modifier = function (jeu) {
+        listeJeu[jeu.id].nom = jeu.nom;
+        listeJeu[jeu.id].description = jeu.description;
+        listeJeu[jeu.id].developpeur = jeu.developpeur;
+    }
 };

@@ -1,7 +1,7 @@
 var ModifierJeuVue = (function() {
     pageModifierJeu = document.getElementById("page-modifier-jeu").innerHTML;
 
-    return function(actionModifierJeu) {
+    return function(actionModifierJeu, idJeu) {
 
         this.afficher = function() {
             elementBody = document.getElementsByTagName("body")[0];
@@ -19,7 +19,7 @@ var ModifierJeuVue = (function() {
             var marque = document.getElementById("jeu-developpeur").value;
             var description = document.getElementById("jeu-description").value;
 
-            var jeu = new Jeu(nom, marque, description, null);
+            var jeu = new Jeu(nom, marque, description, idJeu);
 
             actionModifierJeu(jeu);
         }
