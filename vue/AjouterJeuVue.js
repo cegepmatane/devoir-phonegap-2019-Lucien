@@ -1,7 +1,7 @@
 var AjouterJeuVue = (function() {
   pageAjouterJeu = document.getElementById("page-ajouter-jeu").innerHTML;
 
-  return function() {
+  return function(actionEnregistrerJeu) {
 
     this.afficher = function() {
       elementBody = document.getElementsByTagName("body")[0] ;

@@ -15,6 +15,10 @@
       var listeJeuDonnee = jeuDAO.lister();
       var listeJeuVue = new ListeJeuVue(listeJeuDonnee);
       listeJeuVue.afficher();
+    } else if (hash.match(/^#ajouter-jeu/)) {
+
+      var ajouterJeuVue = new AjouterJeuVue(actionAjouterJeu);
+      ajouterJeuVue.afficher();
     } else {
 
       var listeJeuDonnee = jeuDAO.lister();
@@ -29,9 +33,10 @@
     //ajouterJeuVue.afficher();
   }
 
-  var actionEnregistrerJeu = function(jeu) {
-    //...
-  }
+  var actionAjouterJeu = function(jeu) {
+    jeuDAO.ajouter(jeu);
+    window.location.hash = "#";
+  };
 
   initialiser();
 
